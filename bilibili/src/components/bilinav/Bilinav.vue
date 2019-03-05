@@ -7,456 +7,22 @@
                 <div class="nav-name">首页</div>
               </a>
             </li>
-            <li>
+            <li v-for="(item,index) in bilinav.nav" :key="index">
               <a href="#">
                 <div class="num-wrap">
-                  <span>37</span>
+                  <span>{{item.num}}</span>
                 </div>
-                <div class="nav-name">动画</div>
+                <div class="nav-name">{{item.name}}</div>
               </a>
-              <ul class="sub-nav">
-                  <li>
+               <ul class="sub-nav">
+                  <li v-for="(items,index) in bilinav.sub_nav" :key="index">
                       <a href="#">
-                          <span>MAD·AMV</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>MMD·3D</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>短片·手书</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>综合</span>
+                          <span>{{items.name}}</span>
                       </a>
                   </li>
               </ul>
             </li>
-            <li>
-              <a href="#">
-                <div class="num-wrap">
-                  <span>3</span>
-                </div>
-                <div class="nav-name">番剧</div>
-              </a>
-              <ul class="sub-nav">
-                  <li>
-                      <a href="#">
-                          <span>MAD·AMV</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>MMD·3D</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>短片·手书</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>综合</span>
-                      </a>
-                  </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">
-                <div class="num-wrap">
-                  <span>1</span>
-                </div>
-                <div class="nav-name">国创</div>
-              </a>
-              <ul class="sub-nav">
-                  <li>
-                      <a href="#">
-                          <span>MAD·AMV</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>MMD·3D</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>短片·手书</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>综合</span>
-                      </a>
-                  </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">
-                <div class="num-wrap">
-                  <span>106</span>
-                </div>
-                <div class="nav-name">音乐</div>
-              </a>
-              <ul class="sub-nav">
-                  <li>
-                      <a href="#">
-                          <span>MAD·AMV</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>MMD·3D</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>短片·手书</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>综合</span>
-                      </a>
-                  </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">
-                <div class="num-wrap">
-                  <span>10</span>
-                </div>
-                <div class="nav-name">舞蹈</div>
-              </a>
-              <ul class="sub-nav">
-                  <li>
-                      <a href="#">
-                          <span>MAD·AMV</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>MMD·3D</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>短片·手书</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>综合</span>
-                      </a>
-                  </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">
-                <div class="num-wrap">
-                  <span>376</span>
-                </div>
-                <div class="nav-name">游戏</div>
-              </a>
-              <ul class="sub-nav">
-                  <li>
-                      <a href="#">
-                          <span>MAD·AMV</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>MMD·3D</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>短片·手书</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>综合</span>
-                      </a>
-                  </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">
-                <div class="num-wrap">
-                  <span>37</span>
-                </div>
-                <div class="nav-name">科技</div>
-              </a>
-              <ul class="sub-nav">
-                  <li>
-                      <a href="#">
-                          <span>MAD·AMV</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>MMD·3D</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>短片·手书</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>综合</span>
-                      </a>
-                  </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">
-                <div class="num-wrap">
-                  <span>10</span>
-                </div>
-                <div class="nav-name">数码</div>
-              </a>
-              <ul class="sub-nav">
-                  <li>
-                      <a href="#">
-                          <span>MAD·AMV</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>MMD·3D</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>短片·手书</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>综合</span>
-                      </a>
-                  </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">
-                <div class="num-wrap">
-                  <span>410</span>
-                </div>
-                <div class="nav-name">生活</div>
-              </a>
-              <ul class="sub-nav">
-                  <li>
-                      <a href="#">
-                          <span>MAD·AMV</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>MMD·3D</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>短片·手书</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>综合</span>
-                      </a>
-                  </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">
-                <div class="num-wrap">
-                  <span>6</span>
-                </div>
-                <div class="nav-name">鬼畜</div>
-              </a>
-              <ul class="sub-nav">
-                  <li>
-                      <a href="#">
-                          <span>MAD·AMV</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>MMD·3D</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>短片·手书</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>综合</span>
-                      </a>
-                  </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">
-                <div class="num-wrap">
-                  <span>8</span>
-                </div>
-                <div class="nav-name">时尚</div>
-              </a>
-              <ul class="sub-nav">
-                  <li>
-                      <a href="#">
-                          <span>MAD·AMV</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>MMD·3D</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>短片·手书</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>综合</span>
-                      </a>
-                  </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">
-                <div class="num-wrap">
-                  <span>10</span>
-                </div>
-                <div class="nav-name">广告</div>
-              </a>
-              <ul class="sub-nav">
-                  <li>
-                      <a href="#">
-                          <span>MAD·AMV</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>MMD·3D</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>短片·手书</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>综合</span>
-                      </a>
-                  </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">
-                <div class="num-wrap">
-                  <span>89</span>
-                </div>
-                <div class="nav-name">娱乐</div>
-              </a>
-              <ul class="sub-nav">
-                  <li>
-                      <a href="#">
-                          <span>MAD·AMV</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>MMD·3D</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>短片·手书</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>综合</span>
-                      </a>
-                  </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">
-                <div class="num-wrap">
-                  <span>55</span>
-                </div>
-                <div class="nav-name">影视</div>
-              </a>
-              <ul class="sub-nav">
-                  <li>
-                      <a href="#">
-                          <span>MAD·AMV</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>MMD·3D</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>短片·手书</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>综合</span>
-                      </a>
-                  </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">
-                <div class="num-wrap">
-                  <span>3</span>
-                </div>
-                <div class="nav-name">放映厅</div>
-              </a>
-              <ul class="sub-nav">
-                  <li>
-                      <a href="#">
-                          <span>MAD·AMV</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>MMD·3D</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>短片·手书</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#">
-                          <span>综合</span>
-                      </a>
-                  </li>
-              </ul>
-            </li>
+            
             <li class="side-nav zl">
               <a href="#" class="side-link">
                 <i class="zhuanlan"></i>
@@ -526,22 +92,34 @@
           </ul>
           <div class="gif-menu nav-gif">
             <a href="#" title="齐木楠雄的灾难" class="random-p">
-              <img src="http://i1.hdslb.com/bfs/active/e3ea2ef84b9bf180186ea9dc5e09c7cbe0a5b0d4.gif" alt="">
+              <img :src="bilinav.gif_url" alt="#">
             </a>
           </div>
         </div>
       </div>
 </template>
 <script>
+
 export default {
     data() {
         return {
-            
+            bilinav:{}
         }
     },
     methods:{
         
-    }
+    },
+    created: function () {
+        // GET /someUrl
+        this.$http.get('https://www.easy-mock.com/mock/5c7d1b71cf384074c61ce181/bilibili/img').then(response => {
+          // console.log(response.json())
+          this.bilinav = response.data.data.bilinav
+          // console.log(this.navmenu.touxiang_url)
+ 
+        }, response => {
+            console.log("error");
+        });
+    },
 }
 </script>
 <style>

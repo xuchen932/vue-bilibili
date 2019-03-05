@@ -13,97 +13,12 @@
                         </el-carousel-item>
                         </el-carousel>
                     </div>
-                    <!-- </ul> -->
-                    <!-- <ul>
-                        <li class="title" v-for="(list,index) in slideList" :key="index">
-                            <a href="#">
-                                {{list.msg}}
-                            </a>
-                        </li>
-                    </ul> -->
                      
                 </div>
             </div>
         </div>
-        <div class="recommend-module clearfix" @mouseenter="btnShow" @mouseleave="btnHide" v-for="(list,index) in cardList" :key="index">
-            <div class="groom-module home-card">
-                <a href="#" :title="list.title">
-                    <img :src="list.image" :alt="list.title" class="pic">
-                    <div class="card-mark">
-                        <p class="title">{{list.title}}</p>
-                        <p class="author">{{list.author}}</p>
-                        <p class="play">{{list.play}}</p>
-                    </div>
-                </a>
-                <div class="watch-later-trigger"></div>
-            </div>
-            <div class="groom-module home-card">
-                <a href="#" :title="list.title">
-                    <img :src="list.image" :alt="list.title" class="pic">
-                    <div class="card-mark">
-                        <p class="title">{{list.title}}</p>
-                        <p class="author">{{list.author}}</p>
-                        <p class="play">{{list.play}}</p>
-                    </div>
-                </a>
-                <div class="watch-later-trigger"></div>
-            </div>
-            <div class="groom-module home-card">
-                <a href="#" :title="list.title">
-                    <img :src="list.image" :alt="list.title" class="pic">
-                    <div class="card-mark">
-                        <p class="title">{{list.title}}</p>
-                        <p class="author">{{list.author}}</p>
-                        <p class="play">{{list.play}}</p>
-                    </div>
-                </a>
-                <div class="watch-later-trigger"></div>
-            </div>
-            <div class="groom-module home-card">
-                <a href="#" :title="list.title">
-                    <img :src="list.image" :alt="list.title" class="pic">
-                    <div class="card-mark">
-                        <p class="title">{{list.title}}</p>
-                        <p class="author">{{list.author}}</p>
-                        <p class="play">{{list.play}}</p>
-                    </div>
-                </a>
-                <div class="watch-later-trigger"></div>
-            </div>
-            <div class="groom-module home-card">
-                <a href="#" :title="list.title">
-                    <img :src="list.image" :alt="list.title" class="pic">
-                    <div class="card-mark">
-                        <p class="title">{{list.title}}</p>
-                        <p class="author">{{list.author}}</p>
-                        <p class="play">{{list.play}}</p>
-                    </div>
-                </a>
-                <div class="watch-later-trigger"></div>
-            </div>
-            <div class="groom-module home-card">
-                <a href="#" :title="list.title">
-                    <img :src="list.image" :alt="list.title" class="pic">
-                    <div class="card-mark">
-                        <p class="title">{{list.title}}</p>
-                        <p class="author">{{list.author}}</p>
-                        <p class="play">{{list.play}}</p>
-                    </div>
-                </a>
-                <div class="watch-later-trigger"></div>
-            </div>
-            <div class="groom-module home-card">
-                <a href="#" :title="list.title">
-                    <img :src="list.image" :alt="list.title" class="pic">
-                    <div class="card-mark">
-                        <p class="title">{{list.title}}</p>
-                        <p class="author">{{list.author}}</p>
-                        <p class="play">{{list.play}}</p>
-                    </div>
-                </a>
-                <div class="watch-later-trigger"></div>
-            </div>
-            <div class="groom-module home-card">
+        <div class="recommend-module clearfix" @mouseenter="btnShow" @mouseleave="btnHide">
+            <div class="groom-module home-card"  v-for="(list,index) in homepage.cardList" :key="index">
                 <a href="#" :title="list.title">
                     <img :src="list.image" :alt="list.title" class="pic">
                     <div class="card-mark">
@@ -145,35 +60,11 @@ export default {
                     "clickUrl": "#",
                     "image": "http://i0.hdslb.com/bfs/archive/8fc241a07b6dcd9488e40f1f44de9d3e28874ac3.jpg",
                 },
-                // {
-                //     "clickUrl": "#",
-                //     "image": "https://i0.hdslb.com/bfs/sycp/creative_img/201901/905503fa1725ac9a5b968d22dc85f107.jpg",
-                // },
-                // {
-                //     "clickUrl": "#",
-                //     "image": "https://i0.hdslb.com/bfs/sycp/creative_img/201901/55ee648fd7761539188af9655d401912.jpg",
-                // },
-                // {
-                //     "clickUrl": "#",
-                //     "image": "http://i0.hdslb.com/bfs/archive/5ebb38fde8819a8a6911f149cb2ba846b2fac265.jpg",
-                // },
-                // {
-                //     "clickUrl": "#",
-                //     "image": "http://i0.hdslb.com/bfs/archive/20c822f9e1882dc6fcf879ad9dde4625f1fd7c37.jpg",
-                // }
-            ],
-            cardList:[
-                {
-                    "clickUrl": "#",
-                    "image": "http://i1.hdslb.com/bfs/archive/3e8149e1014a68a0bdbe0df2b119506085811213.png@160w_100h.png",
-                    "title":"【碧蓝航线】我克利夫兰有个梦想，就是成为舞蹈巨星！",
-                    "author":"up主：ewwe404",
-                    "play":"播放：8.5万"
-                }
             ],
             currentIndex: 0,
             timer:"",
             btn:false,
+            homepage:{}
         }
     },
     methods:{
@@ -203,6 +94,15 @@ export default {
         }
     },
     created() {
+        // GET /someUrl
+        this.$http.get('https://www.easy-mock.com/mock/5c7d1b71cf384074c61ce181/bilibili/homepage').then(response => {
+          // console.log(response.json())
+          this.homepage = response.data.data
+ 
+        }, response => {
+            console.log("error");
+        });
+
         //在DOM加载完成后，下个tick中开始轮播
         this.$nextTick(() => {
             this.timer = setInterval(() => {

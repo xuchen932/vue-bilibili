@@ -1,6 +1,6 @@
 <template>
     <div class="nav-menu">
-        <div class="nav-bg"></div>
+        <div class="nav-bg" :style="{backgroundImage:'url('+ navmenu.beijing_url +')'}"></div>
         <div class="nav-mask"></div>
         <!-- wrapper开始 -->
         <div class="nav-wrapper clearfix">
@@ -39,7 +39,7 @@
               <li class="nav-item download" @mouseover="overShow" @mouseout="outHide">
                   <i class="icon-mobile iconfont"></i>
                   <a href="#" class="t">下载APP</a>
-                  <div class="appshow" v-show="appshow">
+                  <div class="appshow" v-show="appshow" :style="hover">
                   </div>
               </li>
             </ul>
@@ -52,7 +52,7 @@
               <li class="nav-item profile-info">
                 <a href="" class="t">
                   <div class="i-face">
-                    <img src="http://i2.hdslb.com/bfs/face/c82685bb0f151a4fc4a6feea6fc9fa50e4cb56d9.jpg" alt="touxiang" class="face">
+                    <img :src="navmenu.touxiang_url" alt="touxiang" class="face">
                   </div>
                 </a>
               </li>
@@ -85,6 +85,8 @@
 export default {
   data () {
     return {
+      navmenu:{},
+      hover:'',
       appshow:false,
       gameshow:false,
       liveshow:false,
@@ -92,6 +94,7 @@ export default {
   },
   methods:{
     overShow(){
+      this.hover = {background:'url('+ this.navmenu.appshow_url +')'};
       this.appshow = true;
     },
     outHide(){
@@ -110,7 +113,23 @@ export default {
       this.liveshow = false
     }
     
-  }
+  },
+  created: function () {
+        // GET /someUrl
+        this.$http.get('https://www.easy-mock.com/mock/5c7d1b71cf384074c61ce181/bilibili/img').then(response => {
+          // console.log(response.json())
+          this.navmenu = response.data.data.navmenu
+          // console.log(this.navmenu.touxiang_url)
+
+          // return response.json();
+
+            // get body data
+            // this.someData = response.body;
+ 
+        }, response => {
+            console.log("error");
+        });
+    },
 }
 </script>
 <style>
@@ -130,7 +149,7 @@ export default {
     color: #222;
   }
   .header .nav-menu .nav-bg{
-    background-image: url(http://i0.hdslb.com/bfs/archive/6c42c40ed54f4bb5ea491894aff693878afa6580.png);
+    /* background-image: url(http://i0.hdslb.com/bfs/archive/6c42c40ed54f4bb5ea491894aff693878afa6580.png); */
     position: absolute;
     top: 0;
     left: 0;
@@ -232,7 +251,7 @@ export default {
     height: 174px;
     left: -20px;
     top: 42px;
-    background: url(http://s1.hdslb.com/bfs/static/jinkela/home/asserts/orcode-frame.png)
+    /* background: url(http://s1.hdslb.com/bfs/static/jinkela/home/asserts/orcode-frame.png) */
   }
   .header .nav-menu .nav-wrapper .nav-con .nav-item.download .appshow::before{
     content: "";
